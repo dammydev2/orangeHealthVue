@@ -1,5 +1,5 @@
 <template>
-  <div class="" id="top" data-spy="scroll" data-target=".navbar-collapse">
+  <div class="" >
     <nav class="navbar navbar-expand-sm navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">

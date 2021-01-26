@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/6b6030dd17.js" crossorigin="anonymous"></script>
 </head>
 
-<body id="top" data-spy="scroll" data-target=".navbar-collapse">
+<body >
     <div id="app">
         <example-component></example-component>
     </div>
