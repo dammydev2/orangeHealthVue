@@ -449,7 +449,7 @@
               <p>
                 Your donations gooes a long way to make the access of Nigerians
                 to free health care a reality, be rest assured that your funds
-                will be well maximised.
+                will be well maximised. 
               </p>
             </div>
             <div class="col-md-12"></div>
@@ -586,7 +586,7 @@ export default {
       amount: null,
       phone: null,
       message: null,
-      api_url: process.env.MIX_APP_URL
+      api_url: process.env.MIX_APP_URL,
     };
   },
   methods: {
@@ -607,9 +607,15 @@ export default {
         this.errors.push("amount must be greater or equals to 500.");
       }
 
-      
+      if (this.name && this.email && this.amount >= 500) {
+        let uri = this.api_url + "/api/post/create";
+        console.log(url)
+        // this.axios.post(uri, this.post).then((response) => {
+        //   this.$router.push({ name: "posts" });
+        // });
+      }
 
-      console.log(api_url);
+      console.log(this.api_url);
 
       e.preventDefault();
     },
