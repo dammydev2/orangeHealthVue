@@ -610,7 +610,7 @@ export default {
           this.errors.push('amount must be greater or equals to 500.');
       }
 
-      console.log(this.data)
+      // sending data to the api
 
       e.preventDefault();
     },
