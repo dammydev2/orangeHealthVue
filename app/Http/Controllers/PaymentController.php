@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Paystack;
 use App\Services\PaymentService;
-use Illuminate\Contracts\Session\Session as SessionSession;
+use App\Http\Resources\PaymentCollection;
 use Session;
 
 class PaymentController extends Controller
