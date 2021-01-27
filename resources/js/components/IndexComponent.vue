@@ -590,9 +590,6 @@ export default {
   },
   methods: {
     checkForm: function (e) {
-      if (this.name) {
-        return true;
-      }
 
       this.errors = [];
 
@@ -610,7 +607,7 @@ export default {
           this.errors.push('amount must be greater or equals to 500.');
       }
 
-      // sending data to the api
+      console.log(this.name)
 
       e.preventDefault();
     },
