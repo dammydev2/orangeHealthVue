@@ -608,13 +608,19 @@ export default {
       }
 
       if (this.name && this.email && this.amount >= 500) {
-        let uri = this.api_url + "/api/post/create";
+        let uri = this.api_url + "/api/payment/create";
         this.axios.post(uri, this.post).then((response) => {
-          this.$router.push({ name: "posts" });
+          this.$router.push({ 
+            name: this.name,
+            email: this.email,
+            amount: this.amount,
+            phone: this.phone,
+            message: this.message,
+           });
         });
       }
 
-      console.log(this.api_url);
+      // console.log(this.api_url);
 
       e.preventDefault();
     },

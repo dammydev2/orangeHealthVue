@@ -61,7 +61,7 @@ class PaymentController extends Controller
         return redirect('confirm_pay');
     }
 
-    public function store(Request $request)
+    public function createAPIpayment(Request $request)
     {
         $details = $this->paymentService->enterPaymentDetails($request->all());
 
