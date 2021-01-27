@@ -586,35 +586,37 @@ export default {
       amount: null,
       phone: null,
       message: null,
+      api_url: process.env.MIX_APP_URL
     };
   },
   methods: {
     checkForm: function (e) {
-
       this.errors = [];
 
       if (!this.name) {
         this.errors.push("Name required.");
       }
       if (!this.email) {
-        this.errors.push('Email required.');
+        this.errors.push("Email required.");
       } else if (!this.validEmail(this.email)) {
-        this.errors.push('Valid email required.');
+        this.errors.push("Valid email required.");
       }
-      if(!this.amount){
-          this.errors.push('amount is required');
-      }else if(this.amount < 500){
-          this.errors.push('amount must be greater or equals to 500.');
+      if (!this.amount) {
+        this.errors.push("amount is required");
+      } else if (this.amount < 500) {
+        this.errors.push("amount must be greater or equals to 500.");
       }
 
-      console.log(this.name)
+      
+
+      console.log(api_url);
 
       e.preventDefault();
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    }
+    },
   },
 };
 </script>
