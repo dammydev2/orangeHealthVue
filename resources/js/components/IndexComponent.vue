@@ -590,7 +590,7 @@ export default {
   },
   methods: {
     checkForm: function (e) {
-      if (this.name && this.age) {
+      if (this.name) {
         return true;
       }
 
@@ -610,7 +610,7 @@ export default {
           this.errors.push('amount must be greater or equals to 500.');
       }
 
-      console.log(data)
+      console.log(this.data)
 
       e.preventDefault();
     },
