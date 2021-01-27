@@ -28,11 +28,11 @@ class PaymentController extends Controller
      */
     public function redirectToGateway()
     {
-        try{
+        try {
             return Paystack::getAuthorizationUrl()->redirectNow();
-        }catch(\Exception $e) {
-            return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
-        }        
+        } catch (\Exception $e) {
+            return Redirect::back()->withMessage(['msg' => 'The paystack token has expired. Please refresh the page and try again.', 'type' => 'error']);
+        }
     }
 
     /**
@@ -59,6 +59,13 @@ class PaymentController extends Controller
         $details = $this->paymentService->enterPaymentDetails($request->all());
         Session::put('data', $details);
         return redirect('confirm_pay');
+    }
+
+    public function store(Request $request)
+    {
+        $details = $this->paymentService->enterPaymentDetails($request->all());
+
+        return response()->json($details);
     }
 
     public function confirm_pay()

@@ -609,10 +609,9 @@ export default {
 
       if (this.name && this.email && this.amount >= 500) {
         let uri = this.api_url + "/api/post/create";
-        console.log(url)
-        // this.axios.post(uri, this.post).then((response) => {
-        //   this.$router.push({ name: "posts" });
-        // });
+        this.axios.post(uri, this.post).then((response) => {
+          this.$router.push({ name: "posts" });
+        });
       }
 
       console.log(this.api_url);
