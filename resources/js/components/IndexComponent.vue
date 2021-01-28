@@ -581,6 +581,7 @@ export default {
   data() {
     return {
       errors: [],
+      form: [],
       name: null,
       email: null,
       amount: null,
@@ -609,15 +610,30 @@ export default {
 
       if (this.name && this.email && this.amount >= 500) {
         let uri = this.api_url + "/api/payment/create";
-        this.axios.post(uri, this.post).then((response) => {
-          this.$router.push({ 
+        // this.axios.post(uri, this.post).then((response) => {
+        //   this.$router.push({
+        //     name: this.name,
+        //     email: this.email,
+        //     amount: this.amount,
+        //     phone: this.phone,
+        //     message: this.message,
+        //   });
+        // });
+
+        axios
+          .post(uri, {
+            headers: {
+              "Content-type": "application/x-www-form-urlencoded",
+            },
             name: this.name,
             email: this.email,
             amount: this.amount,
             phone: this.phone,
             message: this.message,
-           });
-        });
+          })
+          .then((response) => {
+            console.log(response.status);
+          });
       }
 
       // console.log(this.api_url);

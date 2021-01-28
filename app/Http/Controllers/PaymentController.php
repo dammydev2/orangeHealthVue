@@ -63,6 +63,7 @@ class PaymentController extends Controller
 
     public function createAPIpayment(Request $request)
     {
+        // dd($request->toArray());
         $details = $this->paymentService->enterPaymentDetails($request->all());
 
         return response()->json($details);
