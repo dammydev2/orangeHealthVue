@@ -16,7 +16,7 @@ Vue.use(VueAxios, axios);
 // import HomeComponent from './components/HomeComponent.vue';
 // import CreateComponent from './components/CreateComponent.vue';
 import IndexComponent from './components/IndexComponent.vue';
-// import EditComponent from './components/EditComponent.vue';
+import PayComponent from './components/PayComponent';
 
 const routes = [
   {
@@ -24,6 +24,11 @@ const routes = [
       path: '/',
       component: IndexComponent
   },
+  {
+    name: 'pay',
+    path: '/pay',
+    component: PayComponent
+},
 //   {
 //       name: 'create',
 //       path: '/create',
