@@ -632,7 +632,11 @@ export default {
             message: this.message,
           })
           .then((response) => {
-            console.log(response.status);
+            if(response.status === 200){
+              this.data = response.data
+              console.log(this.data)
+              this.$router.push('pay');
+            }
           });
       }
 
