@@ -5,7 +5,7 @@
               <div class="card-header">Index Component</div>
 
               <div class="card-body">
-                  I'm an pay component.
+                  I'm an pay component. {{ message }}
               </div>
           </div>
       </div>
@@ -14,7 +14,5 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Index Component mounted.')
-        }
+        props: ['message']
     }

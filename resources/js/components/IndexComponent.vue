@@ -635,7 +635,7 @@ export default {
             if(response.status === 200){
               this.data = response.data
               console.log(this.data)
-              // this.$router.push('pay');
+              this.$router.push('pay');
             }
           });
       }
